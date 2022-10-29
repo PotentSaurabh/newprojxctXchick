@@ -14,15 +14,16 @@ async def channel_post(client: Client, messageone: Message):
 async def channel_post(client: Client, messagetwo: Message):
     reply_text = await message.reply_text("send 720p file", quote = True)
     try:
-        post_message = await messageone.copy(chat_id = client.db_channel.id, disable_notification=True)
+        post_messageone = await messageone.copy(chat_id = client.db_channel.id, disable_notification=True)
     except FloodWait as eone:
         await asyncio.sleep(eone.x)
-        post_message = await messagetwo.copy(chat_id = client.db_channel.id, disable_notification=True)
+        post_messageone = await messageone.copy(chat_id = client.db_channel.id, disable_notification=True)
     except Exception as eone:
         print(eone)
         await reply_text.edit_text("Something went Wrong for 480p file")
         return
-    post_messageone = await messagetwo.copy(chat_id = client.db_channel.id, disable_notification=True)
+    try:
+        post_messagetwo = await messagetwo.copy(chat_id = client.db_channel.id, disable_notification=True)
     except FloodWait as etwo:
         await asyncio.sleep(etwo.x)
         post_messagetwo = await messagetwo.copy(chat_id = client.db_channel.id, disable_notification=True)
