@@ -41,7 +41,7 @@ async def channel_post(client: Client, messagetwo: Message):
 
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("🔁 Share URL", url=f'https://t.me/share/Targetx25')]])
 
-    await reply_text.edit(f"🎬 𝐓𝐢𝐭𝐥𝐞:
+    await reply_text.edit(f" 𝐓𝐢𝐭𝐥𝐞:
 🔊 𝐋𝐚𝐧𝐠𝐮𝐚𝐠𝐞: English + Hindi
 🎞 𝐐𝐮𝐚𝐥𝐢𝐭𝐲: Web-Rip
 📧 𝐒𝐮𝐛𝐭𝐢𝐭𝐥𝐞𝐬: Esubs
