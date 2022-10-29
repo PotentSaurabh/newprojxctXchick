@@ -67,8 +67,8 @@ Watch 👉 https://t.me/HeavenForYouAll/8261
 🎯 Join : @HeavenRequest
 ---------------------------------------------
 To get Latest Movies/Series faster with Ad-free experience, get your Premium membership through @HeavenPremiumBot.
-°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°° ", 
-reply_markup=reply_markup, disable_web_page_preview = True)
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+", reply_markup=reply_markup, disable_web_page_preview = True)
 
     if not DISABLE_CHANNEL_BUTTON:
         await post_message.edit_reply_markup(reply_markup)
