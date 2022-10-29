@@ -41,34 +41,7 @@ async def channel_post(client: Client, messagetwo: Message):
 
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("🔁 Share URL", url=f'https://t.me/share/Targetx25')]])
 
-    await reply_text.edit(f" 𝐓𝐢𝐭𝐥𝐞:
-🔊 𝐋𝐚𝐧𝐠𝐮𝐚𝐠𝐞: English + Hindi
-🎞 𝐐𝐮𝐚𝐥𝐢𝐭𝐲: Web-Rip
-📧 𝐒𝐮𝐛𝐭𝐢𝐭𝐥𝐞𝐬: Esubs
-〰〰〰〰〰〰〰〰〰〰〰
-🧑‍💻How to Download :
-Watch 👉 https://t.me/HeavenForYouAll/8261
-〰〰〰〰〰〰〰〰〰〰〰
-
-480p x264 [ MB ]
-👉 {linkone}
-
-720p x265 [ MB ]
-👉 
-
-720p x264 [ GB ]
-👉 {linktwo}
-
-1080p x264 [ GB ]
-👉 
-
-.........................................................
-🎯 Join : @HeavenForYouAll
-🎯 Join : @HeavenRequest
----------------------------------------------
-To get Latest Movies/Series faster with Ad-free experience, get your Premium membership through @HeavenPremiumBot.
-°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
-", reply_markup=reply_markup, disable_web_page_preview = True)
+    await reply_text.edit(f"<b>Here is your both links</b>\n\n{linkone}\n\n{linktwo}", reply_markup=reply_markup, disable_web_page_preview = True)
 
     if not DISABLE_CHANNEL_BUTTON:
         await post_message.edit_reply_markup(reply_markup)
