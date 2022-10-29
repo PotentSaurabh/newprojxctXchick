@@ -22,6 +22,10 @@ async def channel_post(client: Client, messagetwo: Message):
         print(eone)
         await reply_text.edit_text("Something went Wrong for 480p file")
         return
+    converted_idone = post_messageone.id * abs(client.db_channel.id)
+    stringone = f"get-{converted_idone}"
+    base64_stringone = await encode(stringone)
+    linkone = await get_shortlink(f"https://telegram.me/{client.username}?start={base64_stringone}")
     try:
         post_messagetwo = await messagetwo.copy(chat_id = client.db_channel.id, disable_notification=True)
     except FloodWait as etwo:
@@ -31,10 +35,6 @@ async def channel_post(client: Client, messagetwo: Message):
         print(etwo)
         await reply_text.edit_text("Something went Wrong for 720p file!")
         return
-    converted_idone = post_messageone.id * abs(client.db_channel.id)
-    stringone = f"get-{converted_idone}"
-    base64_stringone = await encode(stringone)
-    linkone = await get_shortlink(f"https://telegram.me/{client.username}?start={base64_stringone}")
     converted_idtwo = post_messagetwo.id * abs(client.db_channel.id)
     stringtwo = f"get-{converted_idtwo}"
     base64_stringtwo = await encode(stringtwo)
