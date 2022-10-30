@@ -47,7 +47,7 @@ async def link_generator(client: Client, message: Message):
             channel_message = await client.ask(text = "Forward Message from the DB Channel (with Quotes)..\nor Send 480P Post link", chat_id = message.from_user.id, filters=(filters.forwarded | (filters.text & ~filters.forwarded)), timeout=60)
         except:
             return
-        first_msg_id = await get_message_id(client, aone_message)
+        first_msg_id = await get_message_id(client, first_message)
         if first_msg_id:
             break
         else:
@@ -60,7 +60,7 @@ async def link_generator(client: Client, message: Message):
             channel_message = await client.ask(text = "Forward Message from the DB Channel (with Quotes)..\nor Send 720P Post link", chat_id = message.from_user.id, filters=(filters.forwarded | (filters.text & ~filters.forwarded)), timeout=60)
         except:
             return
-        second_msg_id = await get_message_id(client, btwo_message)
+        second_msg_id = await get_message_id(client, second_message)
         if second_msg_id:
             break
         else:
