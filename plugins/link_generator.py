@@ -71,4 +71,31 @@ async def link_generator(client: Client, message: Message):
     first_link = await get_shortlink(f"https://telegram.me/{client.username}?start={first_base64_string}")
     second_base64_string = await encode(f"get-{second_msg_id * abs(client.db_channel.id)}")
     second_link = await get_shortlink(f"https://telegram.me/{client.username}?start={second_base64_string}")
-    await dusra_message.reply_text(f"<b>Here is your link</b>\n\n{first_link} and {second_link}", quote=True)
+    await dusra_message.reply_text(f"🎬 𝐓𝐢𝐭𝐥𝐞:
+🔊 𝐋𝐚𝐧𝐠𝐮𝐚𝐠𝐞: <b>English + Hindi</b>
+🎞 𝐐𝐮𝐚𝐥𝐢𝐭𝐲: <b>Web-Rip</b>
+📧 𝐒𝐮𝐛𝐭𝐢𝐭𝐥𝐞𝐬: <b>Esubs</b>
+<b>〰〰〰〰〰〰〰〰〰〰〰
+🧑‍💻How to Download :
+Watch </b>👉 <b>https://t.me/HeavenForYouAll/8261</b>
+<b>〰〰〰〰〰〰〰〰〰〰〰
+
+480p x264 [ MB ]
+👉 {first_link}
+
+720p x265 [ MB ]
+👉 {second_link}
+
+720p x264 [ GB ]
+👉 
+
+1080p x264 [ GB ]
+👉 
+
+.........................................................
+🎯 Join : </b>@HeavenForYouAll
+<b>🎯 Join : </b>@HeavenRequest
+<b>---------------------------------------------
+To get Latest Movies/Series faster with Ad-free experience, get your Premium membership through </b>@HeavenPremiumBot<b>.
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°</b>
+", quote=True)
