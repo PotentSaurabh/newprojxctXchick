@@ -71,4 +71,4 @@ async def link_generator(client: Client, message: Message):
     first_link = await get_shortlink(f"https://telegram.me/{client.username}?start={first_base64_string}")
     second_base64_string = await encode(f"get-{second_msg_id * abs(client.db_channel.id)}")
     second_link = await get_shortlink(f"https://telegram.me/{client.username}?start={second_base64_string}")
-    await channel_message.reply_text(f"<b>Here is your link</b>\n\n{first_link} and {second_link}", quote=True)
+    await dusra_message.reply_text(f"<b>Here is your link</b>\n\n{first_link} and {second_link}", quote=True)
