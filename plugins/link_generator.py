@@ -44,16 +44,31 @@ async def batch(client: Client, message: Message):
 async def link_generator(client: Client, message: Message):
     while True:
         try:
-            channel_message = await client.ask(text = "Forward Message from the DB Channel (with Quotes)..\nor Send the DB Channel Post link", chat_id = message.from_user.id, filters=(filters.forwarded | (filters.text & ~filters.forwarded)), timeout=60)
+            channel_message = await client.ask(text = "Forward Message from the DB Channel (with Quotes)..\nor Send 480P Post link", chat_id = message.from_user.id, filters=(filters.forwarded | (filters.text & ~filters.forwarded)), timeout=60)
         except:
             return
-        msg_id = await get_message_id(client, channel_message)
-        if msg_id:
+        first_msg_id = await get_message_id(client, aone_message)
+        if first_msg_id:
+            break
+        else:
+            await channel_message.reply("❌ Error\n\nthis Forwarded Post is not from my DB Channel or this Link is not taken from DB Channel", quote = True)
+            continue
+            
+            
+    while True:
+        try:
+            channel_message = await client.ask(text = "Forward Message from the DB Channel (with Quotes)..\nor Send 720P Post link", chat_id = message.from_user.id, filters=(filters.forwarded | (filters.text & ~filters.forwarded)), timeout=60)
+        except:
+            return
+        second_msg_id = await get_message_id(client, btwo_message)
+        if second_msg_id:
             break
         else:
             await channel_message.reply("❌ Error\n\nthis Forwarded Post is not from my DB Channel or this Link is not taken from DB Channel", quote = True)
             continue
 
-    base64_string = await encode(f"get-{msg_id * abs(client.db_channel.id)}")
-    link = await get_shortlink(f"https://telegram.me/{client.username}?start={base64_string}")
-    await channel_message.reply_text(f"<b>Here is your link</b>\n\n{link}", quote=True)
+    first_base64_string = await encode(f"get-{first_msg_id * abs(client.db_channel.id)}")
+    first_link = await get_shortlink(f"https://telegram.me/{client.username}?start={first_base64_string}")
+    second_base64_string = await encode(f"get-{second_msg_id * abs(client.db_channel.id)}")
+    second_link = await get_shortlink(f"https://telegram.me/{client.username}?start={second_base64_string}")
+    await channel_message.reply_text(f"<b>Here is your link</b>\n\n{first_link} and {second_link}", quote=True)
