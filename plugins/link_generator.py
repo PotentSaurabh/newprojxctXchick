@@ -57,7 +57,7 @@ async def link_generator(client: Client, message: Message):
             
     while True:
         try:
-            dusra_message = await client.ask(text = "Forward Message from the DB Channel (with Quotes)..\nor Send 720P Post link", chat_id = message.from_user.id, filters=(filters.forwarded | (filters.text & ~filters.forwarded)), timeout=60)
+            dusra_message = await client.ask(text = "Forward Message from the DB Channel (with Quotes)..\nor Send 720P HEVC Post link", chat_id = message.from_user.id, filters=(filters.forwarded | (filters.text & ~filters.forwarded)), timeout=60)
         except:
             return
         second_msg_id = await get_message_id(client, dusra_message)
@@ -66,36 +66,37 @@ async def link_generator(client: Client, message: Message):
         else:
             await dusra_message.reply("❌ Error\n\nthis Forwarded Post is not from my DB Channel or this Link is not taken from DB Channel", quote = True)
             continue
+     
+    while True:
+        try:
+            tesra_message = await client.ask(text = "Forward Message from the DB Channel (with Quotes)..\nor Send 720P X264 Post link", chat_id = message.from_user.id, filters=(filters.forwarded | (filters.text & ~filters.forwarded)), timeout=60)
+        except:
+            return
+        third_msg_id = await get_message_id(client, tesra_message)
+        if third_msg_id:
+            break
+        else:
+            await tesra_message.reply("❌ Error\n\nthis Forwarded Post is not from my DB Channel or this Link is not taken from DB Channel", quote = True)
+            continue
+    
+    while True:
+        try:
+            chautha_message = await client.ask(text = "Forward Message from the DB Channel (with Quotes)..\nor Send 1080P X264 Post link", chat_id = message.from_user.id, filters=(filters.forwarded | (filters.text & ~filters.forwarded)), timeout=60)
+        except:
+            return
+        fourth_msg_id = await get_message_id(client, chautha_message)
+        if fourth_msg_id:
+            break
+        else:
+            await chautha_message.reply("❌ Error\n\nthis Forwarded Post is not from my DB Channel or this Link is not taken from DB Channel", quote = True)
+            continue
 
     first_base64_string = await encode(f"get-{first_msg_id * abs(client.db_channel.id)}")
     first_link = await get_shortlink(f"https://telegram.me/{client.username}?start={first_base64_string}")
     second_base64_string = await encode(f"get-{second_msg_id * abs(client.db_channel.id)}")
     second_link = await get_shortlink(f"https://telegram.me/{client.username}?start={second_base64_string}")
-    await dusra_message.reply_text(f"🎬 𝐓𝐢𝐭𝐥𝐞:
-🔊 𝐋𝐚𝐧𝐠𝐮𝐚𝐠𝐞: <b>English + Hindi</b>
-🎞 𝐐𝐮𝐚𝐥𝐢𝐭𝐲: <b>Web-Rip</b>
-📧 𝐒𝐮𝐛𝐭𝐢𝐭𝐥𝐞𝐬: <b>Esubs</b>
-<b>〰〰〰〰〰〰〰〰〰〰〰
-🧑‍💻How to Download :
-Watch </b>👉 <b>https://t.me/HeavenForYouAll/8261</b>
-<b>〰〰〰〰〰〰〰〰〰〰〰
-
-480p x264 [ MB ]
-👉 {first_link}
-
-720p x265 [ MB ]
-👉 {second_link}
-
-720p x264 [ GB ]
-👉 
-
-1080p x264 [ GB ]
-👉 
-
-.........................................................
-🎯 Join : </b>@HeavenForYouAll
-<b>🎯 Join : </b>@HeavenRequest
-<b>---------------------------------------------
-To get Latest Movies/Series faster with Ad-free experience, get your Premium membership through </b>@HeavenPremiumBot<b>.
-°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°</b>
-", quote=True)
+    third_base64_string = await encode(f"get-{third_msg_id * abs(client.db_channel.id)}")
+    third_link = await get_shortlink(f"https://telegram.me/{client.username}?start={third_base64_string}")
+    fourth_base64_string = await encode(f"get-{fourth_msg_id * abs(client.db_channel.id)}")
+    fourth_link = await get_shortlink(f"https://telegram.me/{client.username}?start={fourth_base64_string}")
+    await chautha_message.reply_text(f"🎬 𝐓𝐢𝐭𝐥𝐞:/n🔊 𝐋𝐚𝐧𝐠𝐮𝐚𝐠𝐞:/n🎞 𝐐𝐮𝐚𝐥𝐢𝐭𝐲:/n<b>〰〰〰〰〰〰〰〰〰〰〰/n🧑‍💻How to Download :/nWatch </b>👉/n<b>https://t.me/HeavenForYouAll/7878</b>/n<b>〰〰〰〰〰〰〰〰〰〰〰/n/n480p x264 [ MB ]/n👉{first_link}/n/n720p x265 [ MB ]/n👉{second_link}/n/n720p x264 [ GB ]/n👉{third_link}/n/n1080p x264 [ GB ]/n👉{fourth_link}/n/n........................................................./n🎯 Join :/n</b><b>@HeavenForYouAll</b>/n<b>🎯 Join : </b><b>@HeavenRequest</b>/n<b>---------------------------------------------/nTo get Latest Movies/Series faster with Ad-free experience, get your Premium membership through </b><b>@HeavenPremiumBot</b><b>./n°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°</b>", quote=True)
