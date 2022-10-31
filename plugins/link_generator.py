@@ -92,7 +92,7 @@ async def link_generator(client: Client, message: Message):
         else:
             await chautha_message.reply("❌ Error\n\nthis Forwarded Post is not from my DB Channel or this Link is not taken from DB Channel", quote = True)
             
-            first_file size = get_size(file.file_size)
+            first_file_size = get_size(file.file_size)
             continue
 
     first_base64_string = await encode(f"get-{first_msg_id * abs(client.db_channel.id)}")
