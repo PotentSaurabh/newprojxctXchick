@@ -7,6 +7,7 @@ from config import ADMINS
 from helper_func import encode, get_message_id
 from utils import get_shortlink
 from utils import get_size
+import asyncio
 
 @Bot.on_message(filters.private & filters.user(ADMINS) & filters.command('batch'))
 async def batch(client: Client, message: Message):
@@ -90,7 +91,7 @@ async def link_generator(client: Client, message: Message):
             break
         else:
             await chautha_message.reply("❌ Error\n\nthis Forwarded Post is not from my DB Channel or this Link is not taken from DB Channel", quote = True)
-            fourth_file_size = await get_size(chautha_message)
+            fourth_file_size = async get_size(chautha_message)
             continue
 
     first_base64_string = await encode(f"get-{first_msg_id * abs(client.db_channel.id)}")
