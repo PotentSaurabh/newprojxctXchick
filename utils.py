@@ -22,7 +22,7 @@ async def get_shortlink(link):
             else:
                 return f"Error: {data['message']}"
             
-def get_size(size):
+async def get_size(size):
     """Get size in readable format"""
 
     units = ["Bytes", "KB", "MB", "GB", "TB", "PB", "EB"]
