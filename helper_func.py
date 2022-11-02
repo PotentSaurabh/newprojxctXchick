@@ -85,11 +85,11 @@ async def get_message_id(client, message):
         return 0
     
     
- async def get_movie_name(client, message):
-    if message.text:
-        if message.forward_from_chat.id == client.db_channel.id:
-            return message.text
-        else:
+    async def get_movie_name(client, message):
+            if message.text:
+                 if message.forward_from_chat.id == client.db_channel.id:
+                return message.text
+          else:
             return 0
     elif message.forward_sender_name:
         return 0
