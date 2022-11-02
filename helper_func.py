@@ -84,13 +84,12 @@ async def get_message_id(client, message):
     else:
         return 0
     
-    
-    async def get_movie_name(client, message):
-            if message.text:
-                 if message.forward_from_chat.id == client.db_channel.id:
-                    return message.text
-                else:
-                    return 0
+async def get_message_mg(client, message):
+    if message.forward_from_chat:
+        if message.forward_from_chat.id == client.db_channel.id:
+            return message.text
+        else:
+            return 0
 
 def get_readable_time(seconds: int) -> str:
     count = 0
