@@ -89,11 +89,8 @@ async def get_message_id(client, message):
             if message.text:
                  if message.forward_from_chat.id == client.db_channel.id:
                     return message.text
-          else:
-            return 0
-    elif message.forward_sender_name:
-        return 0
-
+             else:
+                return 0
 
 def get_readable_time(seconds: int) -> str:
     count = 0
