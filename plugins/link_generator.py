@@ -5,7 +5,8 @@ from pyrogram.types import Message
 from bot import Bot
 from config import ADMINS
 from helper_func import encode, get_message_id, get_message_mg
-from utils import get_shortlink, get_size
+from utils import get_shortlink
+from temp import get_size
 
 @Bot.on_message(filters.private & filters.user(ADMINS) & filters.command('batch'))
 async def batch(client: Client, message: Message):
