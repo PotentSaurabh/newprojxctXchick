@@ -85,7 +85,7 @@ async def get_message_id(client, message):
         return 0
     
  async def get_movie_name(client, message):
-    if message.forward_from_chat:
+    if message.text:
         if message.forward_from_chat.id == client.db_channel.id:
             return message.text
         else:
