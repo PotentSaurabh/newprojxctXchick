@@ -1,3 +1,5 @@
+#This Bot is heavily modified for heaven exclusively By TargetX25 So he deserve a big piece of credits too.
+
 import aiohttp
 import asyncio
 import os
