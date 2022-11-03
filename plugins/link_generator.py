@@ -9,11 +9,11 @@ from helper_func import encode, get_message_id, get_message_mg
 from utils import get_shortlink
 from temp import get_size
 
-@Bot.on_message(filters.private & filters.user(ADMINS) & filters.command('batch'))
-async def batch(client: Client, message: Message):
+@Bot.on_message(filters.private & filters.user(ADMINS) & filters.command('series'))
+async def series(client: Client, message: Message):
     while True:
         try:
-            ek_message = await client.ask(text = "Forward the First 480P Ep. Post from Database channel WITH Tag", chat_id = message.from_user.id, filters=(filters.forwarded | (filters.text & ~filters.forwarded)), timeout=60)
+            ek_message = await client.ask(text = "Forward the First 480P Ep. Post from Database channel WITH Tag<b/>", chat_id = message.from_user.id, filters=(filters.forwarded | (filters.text & ~filters.forwarded)), timeout=60)
         except:
             return
         ek_msg_id = await get_message_id(client, ek_message)
@@ -131,8 +131,8 @@ async def single(client: Client, message: Message):
 
 
 
-@Bot.on_message(filters.private & filters.user(ADMINS) & filters.command('genlink'))
-async def link_generator(client: Client, message: Message):
+@Bot.on_message(filters.private & filters.user(ADMINS) & filters.command('movie'))
+async def movie(client: Client, message: Message):
     while True:
         try:
             pehla_message = await client.ask(text = "Forward 480P File Post from Database channel WITH Tag", chat_id = message.from_user.id, filters=(filters.forwarded | (filters.text & ~filters.forwarded)), timeout=60)
