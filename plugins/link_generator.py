@@ -90,7 +90,7 @@ async def batch(client: Client, message: Message):
     ek_link =  await get_shortlink(f"https://telegram.me/{client.username}?start={ek_base64_string}")
     do_string = f"get-{teen_msg_id * abs(client.db_channel.id)}-{char_msg_id * abs(client.db_channel.id)}"
     do_base64_string = await encode(do_string)
-    do_link =  await get_shortlink(f"https://telegram.me/{client.username}?start={base64_string}")
+    do_link =  await get_shortlink(f"https://telegram.me/{client.username}?start={do_base64_string}")
     media_ek = ek_message.video
     ek_size = get_size(media_ek.file_size)
     media_do = teen_message.video
