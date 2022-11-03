@@ -1,4 +1,5 @@
 #(©)Codexbotz
+#This Bot is heavily modified for heaven exclusively By TargetX25 So he deserve a big piece of credits too.
 
 from pyrogram import Client, filters
 from pyrogram.types import Message
