@@ -9,13 +9,13 @@ TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")
 APP_ID = int(os.environ.get("APP_ID", "16913514"))
 
 #Your API Hash from my.telegram.org
-API_HASH = os.environ.get("API_HASH", "")
+API_HASH = os.environ.get("API_HASH", "9996dfffaa4a745d8a99e0dc73f570a9")
 
 #Your db channel Id
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID", ""))
+CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1001426794318"))
 
 #OWNER ID
-OWNER_ID = int(os.environ.get("OWNER_ID", ""))
+OWNER_ID = int(os.environ.get("OWNER_ID", "1154404230"))
 
 #Database 
 DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://target:target@cluster0.8qkog2s.mongodb.net/?retryWrites=true&w=majority")
